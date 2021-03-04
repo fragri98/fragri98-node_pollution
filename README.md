@@ -8,37 +8,21 @@ This is a Node.js app that report polluted areas in the vicinity: the user must 
 
 PROJECT ROOT
     |
-
     |--CONFIG - db.config.js: for configuring MySQL database.
-
     |--CONTROLLERS - getAll.js: returns views/all.ejs.
-
     |              - home.js returns views/index.html.
-
     |              - upload.js handles upload & store images.
-
     |--MIDDLEWARE - upload.js: defines middleware function and
-
     |               initializes Multer Storage engine.
-
     |--MODELS - image.model.js: defines the Sequelize model.
-
     |           Represents the 'images' table in the MySQL Database
-
     |         - index.js: uses the db.config.js file configuration
-
     |           to initialize Sequelize. Using MAMP, I configured
-
     |           this file to match this; it may be necessary to
-
     |           make changes.
-
     |--ROUTES - web.js: defines routes for endpoints that is
-
     |           called from views
-
     |--VIEWS
-
     |--server.js: initializes routes, runs the app.
 
 
