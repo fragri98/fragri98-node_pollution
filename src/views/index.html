@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Environmental Pollution Allert</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <div class="header">
+    <h1>report a polluted area</h1>
+  </div>
+  <main>
+  <div class="container">
+    <div class="section">
+      <!--we need to set the form like this -->
+      <form action="/upload" method="POST" enctype="multipart/form-data" class="section">
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>Image</span>
+            <input type="file" name="file" id="input-files" class="form-control-file border" required/>
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="address" type="text" class="validate" name="address" step="any" required>
+              <label for="address">Address</label>
+              <span class="helper-text" data-error="wrong" data-success="right">Address</span>
+            </div>
+            <div class="input-field col s6">
+              <input id="city" type="text" class="validate" name="city" step="any" required>
+              <label for="city">City</label>
+              <span class="helper-text" data-error="wrong" data-success="right">City</span>
+            </div>
+            <div class="input-field col s6">
+              <input id="cap" type="number" class="validate" name="cap" step="any" required>
+              <label for="cap">Cap</label>
+              <span class="helper-text" data-error="wrong" data-success="right">Cap</span>
+            </div>
+
+
+            <div class="grid">
+              <div class="row">
+                <div class="section">
+                  <button type="submit" class="waves-effect waves-brown btn col s12 ">Submit</button>
+                </div>
+
+                <div class="section">
+                </div>
+              </div>
+            </div>
+          </form>
+          <form action="/all" method="get">
+            <button class="waves-effect waves-brown btn col s12" id="all">View All</button>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="preview-images"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <div class="footer-copyright">
+    <div class="copyright"> © 2021 | FRANCESCA GRIMALDI </div>
+    <div class="links">
+      <a href="https://www.instagram.com/_fragri_/?hl=it" target="_blank"><img src="images/insta.png" width='30px'></a>
+      <a href="https://www.facebook.com/francesca.grimaldihenderson?ref=tn_tnmn" target="_blank"><img src="images/fb.png" width='30px'></a>
+      <a href="mailto:fgrim98@gmail.com"><img src="images/mail.png" width='30px'></a>
+    </div>
+  </div>
+</div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+// display preview
+$(document).ready(function () {
+  let imagesPreview = function (input, placeToInsertImagePreview) {
+    if (input.files) {
+      let filesAmount = input.files.length;
+      for (i = 0; i < filesAmount; i++) {
+        let reader = new FileReader();
+        reader.onload = function (event) {
+          $($.parseHTML("<img>"))
+          .attr("src", event.target.result)
+          .appendTo(placeToInsertImagePreview);
+        };
+        reader.readAsDataURL(input.files[i]);
+      }
+    }
+    };
+    $("#input-files").on("change", function () {
+      imagesPreview(this, "div.preview-images");
+    });
+  });
+
+
+</script>
+</body>
+</html>

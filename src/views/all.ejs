@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Environmental Pollution Allert</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+  .image{
+    max-width: 50%;
+  }
+  h1 {
+    margin-top: 10px;
+  }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="container">
+      <div class="section">
+        <h1>ALL THE POLLUTED AREAS</h1>
+        <table>
+          <% for(var i=0; i < images.length; i++) { %>
+            <tr>
+              <td>ID: <%= images[i].id %></td>
+              <td>ADDRESS: <%= images[i].address %></td>
+              <td>CITY: <%= images[i].city %></td>
+              <td>CAP: <%= images[i].cap %></td>
+              <td><img class="image"src="<%=images[i].name %>"/></td>
+            </tr>
+            <% } %>
+          </table>
+        </div>
+      </div>
+    </main>
+    <footer class="page-footer">
+      <div class="footer-copyright">
+        <div class="copyright"> © 2021 | FRANCESCA GRIMALDI </div>
+        <div class="links">
+          <a href="https://www.instagram.com/_fragri_/?hl=it" target="_blank"><img src="images/insta.png" width='30px'></a>
+          <a href="https://www.facebook.com/francesca.grimaldihenderson?ref=tn_tnmn" target="_blank"><img src="images/fb.png" width='30px'></a>
+          <a href="mailto:fgrim98@gmail.com"><img src="images/mail.png" width='30px'></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
