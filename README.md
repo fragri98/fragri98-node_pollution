@@ -35,6 +35,8 @@ Database DB_NAME -> table 'image'
 
 |address|varchar(255)|
 
+|city|varchar(255)|
+
 |cap|int(11)|  
 
 |type|varchar(255)|
