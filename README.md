@@ -13,14 +13,14 @@ PROJECT ROOT
 │   ├── home.js returns views/index.html.
 │   └── upload.js: handles upload and store images.
 ├── MODELS
-│   ├── image.model.js: defines the Sequelize model. Represents the 'images' table \*in\* the MySQL Database
+│   ├── image.model.js: defines the Sequelize model. Represents the 'images' table in the MySQL Database
 │   └── index.js: uses the db.config.js file configuration to initialize Sequelize. Using MAMP, I configured this file to match this; it may be necessary to make changes.
 ├── CONFIG
-│   └── db.config.js: \*for\* configuring MySQL database.
+│   └── db.config.js: for configuring MySQL database.
 ├── MIDDLEWARE
-│   └── upload.js: defines middleware \*function\* and initializes Multer Storage engine.
+│   └── upload.js: defines middleware function and initializes Multer Storage engine.
 ├── ROUTES
-│   └── web.js: defines routes \*for\* endpoints that is called from views
+│   └── web.js: defines routes for endpoints that is called from views
 ├── VIEWS
 └── server.js: initializes routes, runs the app.
 ```
